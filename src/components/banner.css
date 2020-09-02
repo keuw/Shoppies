@@ -1,0 +1,36 @@
+
+.container {
+    margin: 0px;
+    padding-left: 1px;
+    padding-right: 1px;
+}
+
+.goldFrame{
+    background: url(../goldFrame.png);
+    background-size: 150px 200px;
+    align-content: center;
+    height: 200px;
+    width: 150px;
+}
+
+.bannerSectionContainer{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+}
+
+.posterFrame{
+    position: relative;
+    left: 0px;
+    top: 41px;
+    height: 117px;
+    width: 78px;
+}
+
+.topList{
+    display: flex;
+}
+
+#topPicksHeader{
+    margin: 0px;
+}

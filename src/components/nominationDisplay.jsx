@@ -57,6 +57,7 @@ class NominationList extends Component {
             const movie = nominated[i];
             if(movie != null){
                 movieList.push(<MovieBox
+                    key = {i}
                     title= {movie.Title}
                     year={movie.Year}
                     poster= {movie.Poster}

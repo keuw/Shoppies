@@ -3,6 +3,7 @@ import './App.css';
 import SearchBar from './components/search';
 import MovieList from './components/movieDisplay';
 import NominationList from './components/nominationDisplay';
+import Banner from './components/banner';
 import { withAlert } from 'react-alert';
 import SlidingPane from "react-sliding-pane";
 import "react-sliding-pane/dist/react-sliding-pane.css";
@@ -133,6 +134,10 @@ class App extends React.Component{
             removeNominee = {this.removeNominee}
             apikey = {apikey}
           />
+          {nominations.length === 5 ?
+            <Banner nominated = {nominations}/>:
+            <div/>
+          }
         </SlidingPane>
       </div>
     );
