@@ -12,7 +12,6 @@ class MovieBox extends Component {
 
     render() {
         const { title, year, nominated, poster, movie, addNominee} = this.props;
-
         return (
             <div className = 'movieContainer'>
                 <div className = 'bannerContainer'>
@@ -25,8 +24,7 @@ class MovieBox extends Component {
                     <div className = 'textContainer'>
                         Year: {year} 
                     </div>
-                    {/* <Button variant="contained">Nominate</Button> */}
-                    {nominated.find(x=> x === movie) == null ? 
+                    {nominated.find(x=> x.imdbID === movie.imdbID) == null ? 
                         <Button variant="contained" onClick={() => addNominee(movie)}>Nominate</Button> :
                         <Button variant="contained"disabled>Nominated</Button>
                     }

@@ -54,6 +54,7 @@ class App extends React.Component{
     this.setState({
       input: name
     });
+    console.log(this.state.nominations);
     this.getMovies(name);
   }
 
@@ -110,16 +111,16 @@ class App extends React.Component{
           isOpen={this.state.isPaneOpen}
           title="Nomination List"
           subtitle="Your top 5 picks"
+          width = "800px"
           onRequestClose={() => {
             // triggered on "<" on left top click or on outside click
             this.setState({ isPaneOpen: false });
-          }}
-        >
+        }}>
           <NominationList
-              nominated = {nominations}
-              removeNominee = {this.removeNominee}
-              apikey = {apikey}
-            />
+            nominated = {nominations}
+            removeNominee = {this.removeNominee}
+            apikey = {apikey}
+          />
         </SlidingPane>
       </div>
     );
