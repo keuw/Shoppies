@@ -22,12 +22,13 @@ class App extends React.Component{
     error: null,
     totalResults: 0,
     isPaneOpen: false,
+    page: 1,
   };
 
 
-  getMovies = async (name) => {
+  getMovies = async (name, page) => {
     const request = await fetch(
-      'http://www.omdbapi.com/?s=' + name + '&type=movie&apikey=' + this.state.apikey
+      'http://www.omdbapi.com/?s=' + name + '&type=movie&apikey=' + this.state.apikey + '&page=' + page
     );
     const data = await request.json();
     if (data.Response === "True"){
@@ -50,12 +51,12 @@ class App extends React.Component{
     }
   }
 
-  searchMovie = (name) => {
+  searchMovie = (name, page) => {
     this.setState({
-      input: name
+      input: name,
+      page: 1,
     });
-    console.log(this.state.nominations);
-    this.getMovies(name);
+    this.getMovies(name, page);
   }
 
   addNominee = (movie) => {
@@ -76,8 +77,15 @@ class App extends React.Component{
     })});
   }
 
+  pageChange = (val) =>{
+    this.setState({
+      page: val,
+    })
+    this.getMovies(this.state.input, val);
+  }
+
   render(){
-    const { input, Response, error, Search, nominations, totalResults, apikey } = this.state;
+    const { input, Response, error, Search, nominations, totalResults, apikey, page } = this.state;
 
     return (
       <div className="App">
@@ -99,6 +107,9 @@ class App extends React.Component{
               totalResults = {totalResults}
               addNominee = {this.addNominee}
               error = {error}
+              page = {page}
+              pageTemp = {page}
+              pageChange = {this.pageChange}
               />
           </div>
         </div>

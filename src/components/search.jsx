@@ -22,7 +22,7 @@ class SearchBar extends Component {
 
     returnSearch = (e,search) => {
         if (e.key === 'Enter'){
-            search(this.state.input)
+            search(this.state.input, 1)
         }
     }
     render(){

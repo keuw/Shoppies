@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Button from '@material-ui/core/Button';
 import './movieDisplay.css';
+import ArrowLeftIcon from '@material-ui/icons/ArrowLeft';
+import ArrowRightIcon from '@material-ui/icons/ArrowRight';
 
 class MovieBox extends Component {
     constructor(props) {
@@ -40,11 +42,35 @@ class MovieList extends Component {
         this.props = props;
         this.state = {
             input: '',
+            page: this.props.page,
+            pageTemp: this.props.page,
+        }
+    }
+
+    handleChange = (e) => {
+        this.setState({
+            pageTemp: e.target.value,
+        });
+    }
+
+    returnPage = (e,pageChange) => {
+        if (e.key === 'Enter'){
+            if (parseInt(this.state.pageTemp) != NaN && this.state.pageTemp <= (Math.floor(this.props.totalResults/10) +1)){
+                this.setState({
+                    page: this.state.pageTemp
+                });
+                pageChange(this.state.pageTemp)
+            }
+            else{
+                this.setState({
+                    pageTemp: this.state.page
+                })
+            }
         }
     }
 
     render(){
-        const { Search, Response, nominated, input, totalResults, addNominee, error} = this.props;
+        const { Search, Response, nominated, input, totalResults, addNominee, error,  pageChange} = this.props;
         let movieList = [];
         
         if (Response == "True"){
@@ -74,6 +100,20 @@ class MovieList extends Component {
                 <div className = 'MovieListContainer'>
                     {movieList}
                 </div>
+                { totalResults > 10 ? 
+                    <div className = 'pageChangeContainer'>
+                        <ArrowLeftIcon fontSize = "large" />
+                        <input 
+                            className="pageChange" 
+                            type="text"
+                            value = {this.state.pageTemp}
+                            onChange={(e) => this.handleChange(e)}
+                            onKeyDown={(e) => this.returnPage(e, pageChange)}
+                        /> 
+                        <ArrowRightIcon fontSize = "large" />
+                    </div> :
+                    <div />
+                }
             </div>
         );
     }

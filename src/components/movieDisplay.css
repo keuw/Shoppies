@@ -37,3 +37,7 @@
 .textContainer {
     display:block;
 }
+
+.pageChangeContainer {
+    margin: 8px;
+}
