@@ -15,7 +15,7 @@ class App extends React.Component{
   state = {
     input: null,
     apikey: '88d64122',
-    nominations: [],
+    nominations: JSON.parse(localStorage.getItem('nominations')) || [],
     Response: "False",
     Search: null,
     visualID: null,
@@ -64,7 +64,8 @@ class App extends React.Component{
     if (this.state.nominations.length < 5){
       this.setState(prevState=>({
         nominations: [...prevState.nominations, movie]
-      }));
+      }), () => {localStorage.setItem('nominations', JSON.stringify(this.state.nominations))}
+      );
     }
     else{
       alert.show('5 Nominations already made, Remove one to add');
