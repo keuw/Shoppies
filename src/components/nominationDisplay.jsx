@@ -55,7 +55,6 @@ class NominationList extends Component {
         
         for (let i = 0; i < nominated.length; i++){
             const movie = nominated[i];
-            console.log(movie);
             if(movie != null){
                 movieList.push(<MovieBox
                     title= {movie.Title}

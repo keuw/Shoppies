@@ -46,7 +46,7 @@ class MovieList extends Component {
     }
 
     render(){
-        const { Search, Response, nominated, input, totalResults, addNominee} = this.props;
+        const { Search, Response, nominated, input, totalResults, addNominee, error} = this.props;
         let movieList = [];
         
         if (Response == "True"){
@@ -66,7 +66,12 @@ class MovieList extends Component {
         return (
             <div className = 'SectionContainer'>
                 <div className = 'resultsTitle'>
-                    {totalResults} Total Results For "{input}"
+                    { Response === "False" ? 
+                        error === "Too many results." ? 
+                        <div> Too many results, narrow down your search </div> : 
+                        <div> No results found for "{input}" </div> : 
+                        <div> {totalResults} Total Results For "{input}" </div>
+                    }
                 </div>
                 <div className = 'MovieListContainer'>
                     {movieList}

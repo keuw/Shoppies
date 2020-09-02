@@ -30,7 +30,7 @@ class App extends React.Component{
       'http://www.omdbapi.com/?s=' + name + '&type=movie&apikey=' + this.state.apikey
     );
     const data = await request.json();
-    if (data.Response){
+    if (data.Response === "True"){
       this.setState({
         input: name,
         Response: data.Response,
@@ -94,9 +94,10 @@ class App extends React.Component{
               Response = {Response}
               nominated = {nominations}
               input = {input}
-              Error = {error}
+              error = {error}
               totalResults = {totalResults}
               addNominee = {this.addNominee}
+              error = {error}
               />
           </div>
         </div>
