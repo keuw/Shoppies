@@ -1,8 +1,7 @@
 
-.container {
+.bannerFrameContainer {
     margin: 0px;
-    padding-left: 1px;
-    padding-right: 1px;
+    padding: 0px;
 }
 
 .goldFrame{

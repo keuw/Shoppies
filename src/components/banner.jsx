@@ -13,7 +13,7 @@ class BannerBox extends Component {
     render() {
         const {poster} = this.props;
         return (
-            <div className = 'container'>
+            <div className = 'bannerFrameContainer'>
                 <div className = "goldFrame" alt = "cannot display">
                     <div>
                         <img src={poster} className = "posterFrame"></img>
