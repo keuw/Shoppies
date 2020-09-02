@@ -49,13 +49,15 @@ class MovieList extends Component {
 
     handleChange = (e) => {
         this.setState({
-            pageTemp: e.target.value,
+            pageTemp: e,
         });
     }
 
     returnPage = (e,pageChange) => {
-        if (e.key === 'Enter'){
-            if (parseInt(this.state.pageTemp) != NaN && this.state.pageTemp <= (Math.floor(this.props.totalResults/10) +1)){
+        if (e === 'Enter'){
+            if (parseInt(this.state.pageTemp) !== NaN 
+                && this.state.pageTemp <= (Math.floor(this.props.totalResults/10) +1)
+                && this.state.pageTemp > 0){
                 this.setState({
                     page: this.state.pageTemp
                 });
@@ -69,14 +71,38 @@ class MovieList extends Component {
         }
     }
 
+    nextPage = (pageChange) => {
+        this.setState({
+            pageTemp: parseInt(this.state.page) + 1
+        },
+        () => {this.returnPage('Enter', pageChange)})
+    }
+
+    prevPage = (pageChange) => {
+        this.setState({
+            pageTemp: parseInt(this.state.page) - 1
+        },
+        () => {this.returnPage('Enter', pageChange)})
+    }
+
+    componentDidUpdate(prevProps) {
+        if (prevProps !== this.props){
+            this.setState({
+                page: this.props.page,
+                pageTemp: this.state.page
+            });
+        }
+    }
+
     render(){
         const { Search, Response, nominated, input, totalResults, addNominee, error,  pageChange} = this.props;
-        let movieList = [];
+        const movieList = [];
         
-        if (Response == "True"){
+        if (Response === "True"){
             for (let i = 0; i < Search.length; i++){
                     let movie = Search[i]
                     movieList.push(<MovieBox
+                        key = {i}
                         title= {movie.Title}
                         year={movie.Year}
                         nominated={nominated}
@@ -102,15 +128,16 @@ class MovieList extends Component {
                 </div>
                 { totalResults > 10 ? 
                     <div className = 'pageChangeContainer'>
-                        <ArrowLeftIcon fontSize = "large" />
+                        <ArrowLeftIcon id="pageArrow" fontSize = "large" onClick={() => this.prevPage(pageChange)} />
                         <input 
                             className="pageChange" 
                             type="text"
                             value = {this.state.pageTemp}
-                            onChange={(e) => this.handleChange(e)}
-                            onKeyDown={(e) => this.returnPage(e, pageChange)}
+                            onChange={(e) => this.handleChange(e.target.value)}
+                            onKeyDown={(e) => this.returnPage(e.key, pageChange)}
                         /> 
-                        <ArrowRightIcon fontSize = "large" />
+                        <div className="totalPages"> /{Math.floor(this.props.totalResults/10) +1} </div>
+                        <ArrowRightIcon id="pageArrow" fontSize = "large" onClick={() => this.nextPage(pageChange)} />
                     </div> :
                     <div />
                 }

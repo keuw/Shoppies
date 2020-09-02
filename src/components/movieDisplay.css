@@ -40,4 +40,13 @@
 
 .pageChangeContainer {
     margin: 8px;
+    display: flex;
+}
+
+#pageArrow{
+  cursor: pointer;
+}
+
+.totalPages {
+    margin: 8px;
 }
