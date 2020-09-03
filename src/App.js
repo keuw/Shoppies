@@ -30,7 +30,7 @@ class App extends React.Component {
 
     getMovies = async (name, page) => {
         const request = await fetch(
-            "http://www.omdbapi.com/?s=" +
+            "https://www.omdbapi.com/?s=" +
                 name +
                 "&type=movie&apikey=" +
                 this.state.apikey +
@@ -104,7 +104,7 @@ class App extends React.Component {
             displayInfo: imdbID,
         });
         fetch(
-            "http://www.omdbapi.com/?i=" +
+            "https://www.omdbapi.com/?i=" +
                 imdbID +
                 "&apikey=" +
                 this.state.apikey +
