@@ -1,4 +1,4 @@
-.movieContainer {
+.movieNominationContainer {
     margin: 8px;
     display: flex;
     text-align: left;
@@ -7,24 +7,28 @@
 
 .bannerContainer {
     margin: 8px;
-    height: 90px;
-    width: 60px;
-    background-color: #C4D6EE;
+    height: 96px;
+    width: 66px;
+    background-color: #c4d6ee;
+    border-color: rgb(215, 215, 252);
 }
 
 .imageContainer {
-    height: 90px;
-    width: 60px;
+    height: 96px;
+    width: 66px;
+    border-style: solid;
+    border-color: rgb(215, 215, 252);
 }
 .infoContainer {
     margin: 8px;
 }
 
-.MovieListContainer {
-    margin: 8px;
+.MovieListNominationContainer {
+    margin: 0px;
+    width: 100%;
 }
 
-.SectionContainer {
+.SectionNominationContainer {
     margin: 8px;
     margin-top: 0px;
     text-align: left;
@@ -35,6 +39,6 @@
     margin-left: 24px;
 }
 
-.textContainer {
-    display:block;
+.textNominationContainer {
+    display: block;
 }

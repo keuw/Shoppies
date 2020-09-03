@@ -7,14 +7,16 @@
 
 .bannerContainer {
     margin: 8px;
-    height: 90px;
-    width: 60px;
-    background-color: #C4D6EE;
+    height: 96px;
+    width: 66px;
+    background-color: #c4d6ee;
 }
 
 .imageContainer {
-    height: 90px;
-    width: 60px;
+    height: 96px;
+    width: 66px;
+    border-style: solid;
+    border-color: rgb(215, 215, 252);
 }
 .infoContainer {
     margin: 8px;
@@ -27,6 +29,7 @@
 .SectionContainer {
     margin: 8px;
     text-align: left;
+    width: 50%;
 }
 
 .resultsTitle {
@@ -35,7 +38,8 @@
 }
 
 .textContainer {
-    display:block;
+    display: block;
+    cursor: pointer;
 }
 
 .pageChangeContainer {
@@ -43,8 +47,8 @@
     display: flex;
 }
 
-#pageArrow{
-  cursor: pointer;
+#pageArrow {
+    cursor: pointer;
 }
 
 .totalPages {

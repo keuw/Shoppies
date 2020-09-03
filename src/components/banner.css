@@ -1,10 +1,9 @@
-
 .bannerFrameContainer {
     margin: 0px;
     padding: 0px;
 }
 
-.goldFrame{
+.goldFrame {
     background: url(../goldFrame.png);
     background-size: 150px 200px;
     align-content: center;
@@ -12,13 +11,13 @@
     width: 150px;
 }
 
-.bannerSectionContainer{
+.bannerSectionContainer {
     text-align: center;
     display: flex;
     flex-direction: column;
 }
 
-.posterFrame{
+.posterFrame {
     position: relative;
     left: 0px;
     top: 41px;
@@ -26,10 +25,10 @@
     width: 78px;
 }
 
-.topList{
+.topList {
     display: flex;
 }
 
-#topPicksHeader{
+#topPicksHeader {
     margin: 0px;
 }
