@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.24a43472.chunk.css",
+    "main.js": "/static/js/main.fdc8cb40.chunk.js",
+    "main.js.map": "/static/js/main.fdc8cb40.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.83c3e0c4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.83c3e0c4.js.map",
+    "static/css/2.4433b899.chunk.css": "/static/css/2.4433b899.chunk.css",
+    "static/js/2.e44b2655.chunk.js": "/static/js/2.e44b2655.chunk.js",
+    "static/js/2.e44b2655.chunk.js.map": "/static/js/2.e44b2655.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.9856c926cf2d6a64762acc94bb2a5109.js": "/precache-manifest.9856c926cf2d6a64762acc94bb2a5109.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.4433b899.chunk.css.map": "/static/css/2.4433b899.chunk.css.map",
+    "static/css/main.24a43472.chunk.css.map": "/static/css/main.24a43472.chunk.css.map",
+    "static/js/2.e44b2655.chunk.js.LICENSE.txt": "/static/js/2.e44b2655.chunk.js.LICENSE.txt",
+    "static/media/goldFrame.png": "/static/media/goldFrame.aaf4a312.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.83c3e0c4.js",
+    "static/css/2.4433b899.chunk.css",
+    "static/js/2.e44b2655.chunk.js",
+    "static/css/main.24a43472.chunk.css",
+    "static/js/main.fdc8cb40.chunk.js"
+  ]
+}
