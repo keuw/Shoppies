@@ -1,3 +1,8 @@
+### Visting the app
+```bash
+The app is available at https://keuw.github.io/Shoppies/
+```
+
 ### Setting up Application Locally
 clone the repository and run the following
 ```bash
