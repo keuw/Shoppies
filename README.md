@@ -25,7 +25,10 @@ yarn start
 - Click Panel on the right
 - Upon 5 nominations, a banner will appear below
 - Click out to return to movie list
+- Upon refresh of browser or exiting browser, the nomination list will be saved
 
 # To view movie details
 - Click on the title of the search
+
+
 ```
